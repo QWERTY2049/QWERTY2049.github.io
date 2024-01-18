@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const alphabetDisplay = document.getElementById("alphabet-display");
     const userInput = document.getElementById("user-input");
     const startButton = document.getElementById("start-button");
+    const resultContainer = document.getElementById("result-container");
+    const resultText = document.getElementById("result");
 
     startButton.addEventListener("click", startTest);
 
@@ -13,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         userInput.disabled = false;
         userInput.focus();
         startButton.style.display = "none";
+        resultContainer.style.display = "none";
         userInput.addEventListener("input", checkTypingSpeed);
     }
 
@@ -35,7 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const charactersTyped = userTyped.length;
             const typingSpeed = (charactersTyped / (timeTaken / 1000)).toFixed(2);
 
-            alert(`Typing Speed: ${typingSpeed} characters per second`);
+            resultText.textContent = `Typing Speed: ${typingSpeed} characters per second`;
+            resultContainer.style.display = "block";
 
             userInput.removeEventListener("input", checkTypingSpeed);
             userInput.disabled = true;
@@ -45,3 +49,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
