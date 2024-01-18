@@ -3,10 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const alphabetDisplay = document.getElementById("alphabet-display");
     const userInput = document.getElementById("user-input");
     const startButton = document.getElementById("start-button");
+    const regenerateButton = document.getElementById("regenerate-button");
     const resultContainer = document.getElementById("result-container");
     const resultText = document.getElementById("result");
 
     startButton.addEventListener("click", startTest);
+    regenerateButton.addEventListener("click", regenerateAlphabet);
 
     function startTest() {
         const shuffledAlphabet = shuffleAlphabet(alphabet);
@@ -15,12 +17,20 @@ document.addEventListener("DOMContentLoaded", function () {
         userInput.disabled = false;
         userInput.focus();
         startButton.style.display = "none";
+        regenerateButton.style.display = "none";
         resultContainer.style.display = "none";
         userInput.addEventListener("input", checkTypingSpeed);
     }
 
     function shuffleAlphabet(alphabet) {
         return alphabet.split('').sort(function() { return 0.5 - Math.random() }).join('');
+    }
+
+    function regenerateAlphabet() {
+        const shuffledAlphabet = shuffleAlphabet(alphabet);
+        alphabetDisplay.textContent = shuffledAlphabet;
+        userInput.value = "";
+        userInput.focus();
     }
 
     let startTime;
@@ -44,9 +54,11 @@ document.addEventListener("DOMContentLoaded", function () {
             userInput.removeEventListener("input", checkTypingSpeed);
             userInput.disabled = true;
             startButton.style.display = "block";
+            regenerateButton.style.display = "block";
             startTime = null;
             alphabetDisplay.textContent = "";
         }
     }
 });
+
 
