@@ -22,7 +22,7 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: inline-block;
     width: 80%; /* Set the width to 80% of the screen */
-    max-width: 600px; /* Added maximum width for larger screens */
+    max-width: 1200px; /* Added maximum width for larger screens */
 }
 
 #alphabet-display {
@@ -39,7 +39,7 @@ h1 {
 #user-input {
     font-size: 18px;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     width: 100%; /* Make the text box fill the width of the container */
 }
 
