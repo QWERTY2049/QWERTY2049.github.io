@@ -17,10 +17,12 @@ h1 {
 
 #game-container {
     background-color: #fff;
-    padding: 20px;
+    padding: 40px; /* Increased padding to add more space */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: inline-block;
+    width: 80%; /* Set the width to 80% of the screen */
+    max-width: 600px; /* Added maximum width for larger screens */
 }
 
 #alphabet-display {
@@ -35,10 +37,10 @@ h1 {
 }
 
 #user-input {
-    font-size: 18px; /* Increased font size */
-    padding: 10px; /* Increased padding */
-    margin-bottom: 20px; /* Increased margin */
-    width: 80%; /* Set width to 80% of the container */
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%; /* Make the text box fill the width of the container */
 }
 
 #start-button {
